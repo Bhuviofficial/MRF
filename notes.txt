@@ -1,0 +1,79 @@
+Definition:
+
+     =>Map objects are collections of key-value pairs. A key in the Map may only occur once; it is unique in the Map's collection.
+       A Map object is iterated by key-value pairs — a for...of loop returns a 2-member array of [key, value] for each iteration.
+       Iteration happens in insertion order,which corresponds to the order in which each key-value pair was first inserted into 
+       the map by the set() method(that is, there wasn't a key with the same value already in the map when set() was called).
+
+Syntax:
+
+     =>Array.prototype.map()
+
+Example:
+   
+const map = new Map();
+map.set("a", 1);
+map.set("b", 2);
+map.set("c", 3);
+
+console.log(map.get("a"));
+// Expected output: 1
+
+map.set("a", 97);
+
+console.log(map.get("a"));
+// Expected output: 97
+
+console.log(map.size);
+// Expected output: 3
+
+map.delete("b");
+
+console.log(map.size);
+// Expected output: 2
+
+
+Filter:
+    =>The filter() method of Array instances creates a shallow copy of a portion of a given array,filtered down to just the elements from
+      the given array that pass the test implemented by the provided function.
+
+Syntax:
+
+      Array.prototype.filter()
+
+Example:
+
+       const words = ["spray", "elite", "exuberant", "destruction", "present"];
+
+const result = words.filter((word) => word.length > 6);
+
+console.log(result);
+// Expected output: Array ["exuberant", "destruction", "present"]
+
+
+Reduce:
+    
+    =>The reduce() method of Array instances executes a user-supplied "reducer" callback function on each element of the array, in order, passing in the return value from 
+      the calculation on the preceding element. The final result of running the reducer across all elements of the array is a single value.The first time that the callback 
+      is run there is no "return value of the previous calculation". If supplied, an initial value may be used in its place. Otherwise the array element at index 0 is used 
+      as the initial value and iteration starts from the next element (index 1 instead of index 0).
+
+Syntax:
+
+      Array.prototype.reduce()
+
+Example:
+
+      const array = [1, 2, 3, 4];
+
+// 0 + 1 + 2 + 3 + 4
+const initialValue = 0;
+const sumWithInitial = array.reduce(
+  (accumulator, currentValue) => accumulator + currentValue,
+  initialValue,
+);
+
+console.log(sumWithInitial);
+// Expected output: 10
+
+
